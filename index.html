@@ -226,26 +226,31 @@
         <h3 style="margin:0 0 16px;">Microsoft Learn Credentials</h3>
         <div class="cert-grid">
           <a href="https://learn.microsoft.com/api/credentials/share/en-us/panthakan/47509D7BF6A2609D?sharingId=330F3C1D8EDC20CC" target="_blank" class="cert-tile" style="background: linear-gradient(135deg, #0078D4 0%, #00BCF2 100%);">
+            <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg" alt="Fundamentals Badge" class="cert-icon">
             <div class="cert-code">AI-900</div>
             <div class="cert-title">Azure AI Fundamentals</div>
           </a>
           
           <a href="https://learn.microsoft.com/api/credentials/share/en-us/panthakan/114C2C3D1519A18?sharingId=330F3C1D8EDC20CC" target="_blank" class="cert-tile" style="background: linear-gradient(135deg, #0063B1 0%, #0078D4 100%);">
+            <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-associate-badge.svg" alt="Associate Badge" class="cert-icon">
             <div class="cert-code">AI-102</div>
             <div class="cert-title">Azure AI Engineer Associate</div>
           </a>
           
           <a href="https://learn.microsoft.com/api/credentials/share/en-us/panthakan/40235EC959AC1842?sharingId=330F3C1D8EDC20CC" target="_blank" class="cert-tile" style="background: linear-gradient(135deg, #8661C5 0%, #A78BCF 100%);">
+            <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-associate-badge.svg" alt="Associate Badge" class="cert-icon">
             <div class="cert-code">DP-100</div>
             <div class="cert-title">Azure Data Scientist Associate</div>
           </a>
           
           <a href="https://learn.microsoft.com/api/credentials/share/en-us/panthakan/739049C54B9BEF8F?sharingId=330F3C1D8EDC20CC" target="_blank" class="cert-tile" style="background: linear-gradient(135deg, #00A4EF 0%, #00BCF2 100%);">
+            <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-associate-badge.svg" alt="Associate Badge" class="cert-icon">
             <div class="cert-code">DP-600</div>
             <div class="cert-title">Fabric Analytics Engineer Associate</div>
           </a>
           
           <a href="https://learn.microsoft.com/api/credentials/share/en-us/panthakan/5FCD7E0531529F25?sharingId=330F3C1D8EDC20CC" target="_blank" class="cert-tile" style="background: linear-gradient(135deg, #50E6FF 0%, #00D4FF 100%);">
+            <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-associate-badge.svg" alt="Associate Badge" class="cert-icon">
             <div class="cert-code">DP-700</div>
             <div class="cert-title">Fabric Data Engineer Associate</div>
           </a>
@@ -274,13 +279,14 @@
     .cert-tile {
       display: flex;
       flex-direction: column;
+      align-items: center;
       padding: 24px 20px;
       border-radius: 12px;
       color: white;
       text-decoration: none;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      min-height: 120px;
+      min-height: 140px;
       justify-content: center;
     }
     
@@ -289,16 +295,25 @@
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
     
+    .cert-icon {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    }
+    
     .cert-code {
       font-size: 1.5em;
       font-weight: bold;
       margin-bottom: 8px;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     }
     
     .cert-title {
       font-size: 1em;
       line-height: 1.4;
       opacity: 0.95;
+      text-align: center;
     }
     
     @media (max-width: 768px) {
