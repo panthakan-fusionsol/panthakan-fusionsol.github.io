@@ -208,26 +208,93 @@
     <section id="certs" class="section">
       <h2>Certifications</h2>
       <p class="lead">Verified badges from Microsoft Learn and Credly.</p>
+      
+      <!-- Microsoft Learn Credentials -->
       <div class="card">
-        <h3 style="margin:0 0 8px;">Microsoft Learn Credential</h3>
-        <p>
-          <a href="https://learn.microsoft.com/api/credentials/share/en-us/panthakan/47509D7BF6A2609D?sharingId=330F3C1D8EDC20CC" target="_blank" class="inline">AI-900| Microsoft Certified: Azure AI Fundamentals</a>
-          <a href="https://learn.microsoft.com/api/credentials/share/en-us/panthakan/114C2C3D1519A18?sharingId=330F3C1D8EDC20CC" target="_blank" class="inline">AI-102| Microsoft Certified: Azure AI Engineer Associate</a>
-          <a href="https://learn.microsoft.com/api/credentials/share/en-us/panthakan/40235EC959AC1842?sharingId=330F3C1D8EDC20CC" target="_blank" class="inline">DP-100| Microsoft Certified: Azure Data Scientist Associate</a>
-          <a href="https://learn.microsoft.com/api/credentials/share/en-us/panthakan/739049C54B9BEF8F?sharingId=330F3C1D8EDC20CC" target="_blank" class="inline">DP-600| Microsoft Certified: Fabric Analytics Engineer Associate</a>
-          <a href="https://learn.microsoft.com/api/credentials/share/en-us/panthakan/5FCD7E0531529F25?sharingId=330F3C1D8EDC20CC" target="_blank" class="inline">DP-700| Microsoft Certified: Fabric Data Engineer Associate</a>
-        </p>
+        <h3 style="margin:0 0 16px;">Microsoft Learn Credentials</h3>
+        <div class="cert-grid">
+          <a href="https://learn.microsoft.com/api/credentials/share/en-us/panthakan/47509D7BF6A2609D?sharingId=330F3C1D8EDC20CC" target="_blank" class="cert-tile" style="background: linear-gradient(135deg, #0078D4 0%, #00BCF2 100%);">
+            <div class="cert-code">AI-900</div>
+            <div class="cert-title">Azure AI Fundamentals</div>
+          </a>
+          
+          <a href="https://learn.microsoft.com/api/credentials/share/en-us/panthakan/114C2C3D1519A18?sharingId=330F3C1D8EDC20CC" target="_blank" class="cert-tile" style="background: linear-gradient(135deg, #0063B1 0%, #0078D4 100%);">
+            <div class="cert-code">AI-102</div>
+            <div class="cert-title">Azure AI Engineer Associate</div>
+          </a>
+          
+          <a href="https://learn.microsoft.com/api/credentials/share/en-us/panthakan/40235EC959AC1842?sharingId=330F3C1D8EDC20CC" target="_blank" class="cert-tile" style="background: linear-gradient(135deg, #8661C5 0%, #A78BCF 100%);">
+            <div class="cert-code">DP-100</div>
+            <div class="cert-title">Azure Data Scientist Associate</div>
+          </a>
+          
+          <a href="https://learn.microsoft.com/api/credentials/share/en-us/panthakan/739049C54B9BEF8F?sharingId=330F3C1D8EDC20CC" target="_blank" class="cert-tile" style="background: linear-gradient(135deg, #00A4EF 0%, #00BCF2 100%);">
+            <div class="cert-code">DP-600</div>
+            <div class="cert-title">Fabric Analytics Engineer Associate</div>
+          </a>
+          
+          <a href="https://learn.microsoft.com/api/credentials/share/en-us/panthakan/5FCD7E0531529F25?sharingId=330F3C1D8EDC20CC" target="_blank" class="cert-tile" style="background: linear-gradient(135deg, #50E6FF 0%, #00D4FF 100%);">
+            <div class="cert-code">DP-700</div>
+            <div class="cert-title">Fabric Data Engineer Associate</div>
+          </a>
+        </div>
       </div>
+      
+      <!-- Credly Badges -->
       <div class="card" style="margin-top:16px;">
-        <h3 style="margin:0 0 8px;">Credly Badges</h3>
+        <h3 style="margin:0 0 16px;">Credly Badges</h3>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
           <iframe src="https://www.credly.com/embedded_badge/v3/712fab64-1690-4718-9be1-464a97f5b386" width="300" height="300" frameborder="0" scrolling="no"></iframe>
         </div>
-        <p>
-          <a href="https://www.credly.com/users/panthakan-boonsuriyatham/badges" target="_blank" class="inline">More badges on Credly</a>
+        <p style="margin-top:16px;">
+          <a href="https://www.credly.com/users/panthakan-boonsuriyatham/badges" target="_blank" class="inline">View all badges on Credly →</a>
         </p>
       </div>
     </section>
+    
+    <style>
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    
+    .cert-tile {
+      display: flex;
+      flex-direction: column;
+      padding: 24px 20px;
+      border-radius: 12px;
+      color: white;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      min-height: 120px;
+      justify-content: center;
+    }
+    
+    .cert-tile:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    
+    .cert-code {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    
+    .cert-title {
+      font-size: 1em;
+      line-height: 1.4;
+      opacity: 0.95;
+    }
+    
+    @media (max-width: 768px) {
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    </style>
 
     <!-- CV -->
     <section id="cv" class="section">
