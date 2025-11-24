@@ -58,7 +58,10 @@
       right: 0;
       z-index: 1000;
       background: var(--bg);
-      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
       padding: 8px 24px 24px;
       border-bottom: 1px solid var(--border);
       max-width: 1000px;
@@ -76,6 +79,16 @@
     .social-links a:hover { opacity: 1; }
     .social-links svg { width: 24px; height: 24px; }
     .subtitle { color: var(--muted); font-size: 0.95rem; }
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-end;
+    }
+    .header-contact .btn {
+      padding: 8px 12px;
+      font-size: 0.9rem;
+    }
     nav { display: flex; align-items: center; gap: 8px; }
     nav a {
       color: var(--text); text-decoration: none;
@@ -88,7 +101,97 @@
     .lead { color: var(--muted); margin: 4px 0 16px; }
     .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
     .col-4 { grid-column: span 4; } .col-6 { grid-column: span 6; } .col-8 { grid-column: span 8; } .col-12 { grid-column: span 12; }
-    @media (max-width: 900px) { .col-4, .col-6, .col-8 { grid-column: span 12; } }
+    
+    /* Responsive styles for medium screens */
+    @media (max-width: 1100px) {
+      .container { padding-top: 200px; }
+      .section { scroll-margin-top: 200px; }
+      
+      header {
+        flex-wrap: wrap;
+      }
+      
+      .header-right {
+        width: 100%;
+        align-items: center;
+      }
+      
+      nav {
+        justify-content: center;
+      }
+    }
+    
+    /* Mobile responsive styles */
+    @media (max-width: 900px) { 
+      .col-4, .col-6, .col-8 { grid-column: span 12; }
+      
+      .container { padding-top: 180px; }
+      
+      header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px 16px 16px;
+      }
+      
+      .brand {
+        gap: 12px;
+      }
+      
+      .avatar {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+      }
+      
+      .name {
+        font-size: 1rem;
+        flex-wrap: wrap;
+      }
+      
+      .subtitle {
+        font-size: 0.85rem;
+      }
+      
+      .header-right {
+        align-items: stretch;
+        gap: 12px;
+      }
+      
+      .header-contact {
+        display: flex;
+        justify-content: center;
+      }
+      
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+        font-size: 0.9rem;
+      }
+      
+      nav .separator {
+        display: none;
+      }
+      
+      .section {
+        scroll-margin-top: 180px;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .container { padding-top: 200px; }
+      .section { scroll-margin-top: 200px; }
+      
+      .name {
+        font-size: 0.95rem;
+      }
+      
+      .social-links svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
 
     .card {
       background: var(--card); border: 1px solid var(--border); border-radius: 12px;
@@ -106,6 +209,27 @@
     .social-links svg { width: 18px !important; height: 18px !important; }
     .list { margin: 0; padding-left: 18px; }
     .list li { margin-bottom: 6px; }
+
+    .other-projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .project-tag {
+      display: inline-block;
+      padding: 8px 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--text);
+      transition: all 0.2s ease;
+    }
+    .project-tag:hover {
+      border-color: var(--brand);
+      background: var(--bg);
+    }
 
     footer { border-top: 1px solid var(--border); padding: 24px 0; color: var(--muted); font-size: 0.9rem; }
 
@@ -162,33 +286,36 @@
           <div class="subtitle">Math | Stats | ML | NLP | Analytics</div>
         </div>
       </div>
-      <nav aria-label="Primary">
-        <a href="#about">About</a>
-        <span class="separator">|</span>
-        <a href="#skills">Skills</a>
-        <span class="separator">|</span>
-        <a href="#projects">Projects</a>
-        <span class="separator">|</span>
-        <a href="#certs">Certifications</a>
-        <span class="separator">|</span>
-        <a href="#cv">CV</a>
-        <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">🌙</button>
-      </nav>
+      <div class="header-right">
+        <div class="header-contact">
+          <a class="btn" href="mailto:panthakan@fusionsol.com">Contact Me</a>
+        </div>
+        <nav aria-label="Primary">
+          <a href="#about">About</a>
+          <span class="separator">|</span>
+          <a href="#skills">Skills</a>
+          <span class="separator">|</span>
+          <a href="#projects">Projects</a>
+          <span class="separator">|</span>
+          <a href="#certs">Certifications</a>
+          <span class="separator">|</span>
+          <a href="#cv">CV</a>
+          <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">🌙</button>
+        </nav>
+      </div>
     </header>
 
     <!-- Hero -->
     <section class="section grid">
       <div class="col-8">
         <h1 style="margin:0;">I turn data into AI-powered solutions.</h1>
-        <p class="lead">Data Scientist & AI Researcher building production ML systems—from customer insights and disease classification to recommendation engines. Proficient in Python, SQL, Azure, and deep learning frameworks.</p>
-        <p>
-          <a class="btn" href="mailto:panthakan@fusionsol.com">Contact Me</a>
-        </p>
-        <strong>Highlights</strong>
+        <p class="lead">Data Scientist &amp; AI Researcher specializing in machine learning, statistical modeling, and AI system development. Experienced in deploying production-grade solutions across retail businesses, business analytics, and research domains.</p>
+        <strong>Key Achievements</strong>
         <ul class="list">
-          <li>Shipped churn prediction with AUC 0.89 → +7% retention</li>
-          <li>Designed analytics pipeline (dbt + Snowflake)</li>
-          <li>Mentor: junior analysts & ML interns</li>
+          <li>Built end-to-end data pipelines using Azure, SQL, and Python frameworks</li>
+          <li>Thailand representative presenting AI-driven disease classification solutions</li>
+          <li>Continuously certified across multiple technologies, committed to lifelong learning</li>
+          <li>Hands-on experience across diverse domains—from government to retail analytics</li>
         </ul>
       </div>
     </section>
@@ -206,25 +333,39 @@
     <section id="skills" class="section">
       <h2>Skills</h2>
       <div class="card">
+        <h3 style="margin:0 0 12px; font-size: 1rem; color: var(--muted);">Programming Languages</h3>
         <div class="skills-pills">
-          <span class="pill">
-            🐍 Python (pandas, TensorFlow, PyTorch)
-          </span>
-          <span class="pill">
-            🗄️ SQL (Postgres, BigQuery)
-          </span>
-          <span class="pill">
-            🧪 Experimentation (A/B, Causal)
-          </span>
-          <span class="pill">
-            ☁️ Cloud (Azure/GCP)
-          </span>
-          <span class="pill">
-            ⚙️ MLOps (CI/CD, monitoring)
-          </span>
-          <span class="pill">
-            📊 Visualization (Tableau, Power BI)
-          </span>
+          <span class="pill">Python</span>
+          <span class="pill">R</span>
+          <span class="pill">C</span>
+          <span class="pill">C++</span>
+          <span class="pill">MATLAB</span>
+          <span class="pill">SQL</span>
+        </div>
+        
+        <h3 style="margin:16px 0 12px; font-size: 1rem; color: var(--muted);">Python Libraries & Frameworks</h3>
+        <div class="skills-pills">
+          <span class="pill">pandas</span>
+          <span class="pill">NumPy</span>
+          <span class="pill">scikit-learn</span>
+          <span class="pill">TensorFlow</span>
+          <span class="pill">PyTorch</span>
+          <span class="pill">Seaborn</span>
+          <span class="pill">Matplotlib</span>
+        </div>
+        
+        <h3 style="margin:16px 0 12px; font-size: 1rem; color: var(--muted);">Cloud Platforms</h3>
+        <div class="skills-pills">
+          <span class="pill">Microsoft Azure</span>
+          <span class="pill">Microsoft Fabric</span>
+        </div>
+        
+        <h3 style="margin:16px 0 12px; font-size: 1rem; color: var(--muted);">Data Visualization</h3>
+        <div class="skills-pills">
+          <span class="pill">Seaborn</span>
+          <span class="pill">Matplotlib</span>
+          <span class="pill">ggplot2</span>
+          <span class="pill">Power BI</span>
         </div>
       </div>
     </section>
@@ -239,7 +380,6 @@
           <ul class="list">
             <li>Data: Customers across all regions of Thailand, over 200 products</li>
             <li>Techniques: Collaborative filtering, matrix factorization, associated rule mining, deep learning</li>
-            <li>Impact: +7% retention, +$1.2M annualized</li>
           </ul>
         </article>
 
@@ -254,21 +394,30 @@
 
         <article class="col-6 card">
           <h3 style="margin:0 0 6px;">Disease Classification Model</h3>
-          <p class="lead">A model to classify diseases in corn crops using image data.</p>
+          <p class="lead">Classify diseases in corn crops using image data.</p>
           <ul class="list">
             <li>Collaboration: Kasetsart University, National Corn and Sorghum Research Center Thailand</li>
-            <li>Awards: Thailand representative in digital innovation sector for ASEAN Digital Awards 2025</li>
+            <li>Recognition: Thailand representative in digital innovation sector for ASEAN Digital Awards 2026</li>
             <li>Model: ResNET</li>
           </ul>
         </article>
 
         <article class="col-6 card">
           <h3 style="margin:0 0 6px;">Search Engine Model</h3>
-          <p class="lead">A model to search relevant information/products based on a given query.</p>
+          <p class="lead">Search relevant information/products based on a given query from a user.</p>
           <ul class="list">
             <li>Techniques: Query Preprocessing, Natural Language Processing</li>
           </ul>
         </article>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="margin: 0 0 8px; font-size: 1.1rem;">Other Projects</h3>
+        <p class="lead" style="margin: 0 0 12px;">Additional projects I've worked on</p>
+        <div class="other-projects">
+          <span class="project-tag">Sentiment Analysis</span>
+          <span class="project-tag">Demand Forecasting</span>
+        </div>
       </div>
     </section>
 
@@ -310,14 +459,29 @@
             <div class="cert-info">Microsoft Certified</div>
             <div class="cert-title">Fabric Data Engineer Associate</div>
           </a>
+
+          <a href="" target="_blank" class="cert-tile" style="background: rgb(0, 126, 192);">
+            <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-associate-badge.svg" alt="Certificate" class="cert-icon">
+            <div class="cert-info">Microsoft Certified</div>
+            <div class="cert-title">Power BI Data Analyst Associate (In December)</div>
+          </a>
         </div>
+        
         <h3 style="margin:0 10 16px;">Google Cloud Certified Credentials</h3>
         <div class="cert-grid">
-        <a href="" target="_blank" class="cert-tile" style="background: rgb(234, 80, 1);">
+          
+          <a href="" target="_blank" class="cert-tile" style="background: rgb(255, 139, 0);">
+            <img src="media/google_cloud_certified_associate.png" alt="Certificate" class="cert-icon">
+            <div class="cert-info">Google Cloud Certified</div>
+            <div class="cert-title">Associate Data Practitioner (In December)</div>
+          </a>
+
+          <a href="" target="_blank" class="cert-tile" style="background: rgb(234, 80, 1);">
             <img src="https://miro.medium.com/v2/resize:fit:1358/1*Y0m5wSVoD2rNMX16mGJVFA.png" alt="Certificate" class="cert-icon">
             <div class="cert-info">Google Cloud Certified</div>
-            <div class="cert-title">TBA</div>
+            <div class="cert-title">Professional Machine Learning Engineer</div>
           </a>
+          
         </div>
       </div>
     </section>
@@ -325,8 +489,27 @@
     <style>
     .cert-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 16px;
+      max-width: 100%;
+    }
+    
+    @media (min-width: 900px) {
+      .cert-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    
+    @media (min-width: 600px) and (max-width: 899px) {
+      .cert-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    @media (max-width: 599px) {
+      .cert-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
     
     .cert-tile {
@@ -368,12 +551,6 @@
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
       line-height: 1.2;
     }
-    
-    @media (max-width: 768px) {
-      .cert-grid {
-        grid-template-columns: 1fr;
-      }
-    }
     </style>
 
     <!-- CV -->
@@ -382,30 +559,54 @@
       <div class="card">
         <h3 style="margin:0 0 6px;">Experience</h3>
         <ul class="list">
-          <li><strong>Data Scientist</strong> — Fusion Solution (May 2025–present). Built ML models, improved KPIs.</li>
-          <li><strong>AI Researcher</strong> — Fusion Solution (August 2025–present). Develop AI techniques for R&D Team at Fusion Solution.</li>
+          <li><strong>Data Scientist</strong> — Fusion Solution (May 2025–present). Built ML models, solve retail business needs.</li>
+          <li><strong>AI Researcher</strong> — Fusion Solution (August 2025–present). Develop AI techniques for R&D Team.</li>
         </ul>
         <h3 style="margin:16px 0 6px;">Education</h3>
         <ul class="list">
-          <li><strong>PhD in Computer Science</strong> — Chulalongkorn University, 2026 - present</li>
-          <li><strong>MPhil in Statistics</strong> — University of Glasgow, 2022 - 2024</li>
-          <li><strong>MSc in Data Analytics</strong> — University of Glasgow, 2021 - 2022</li>
+          <li>
+            <strong>PhD in Computer Science</strong> — Chulalongkorn University, From early 2026
+            <br><span style="color: var(--muted); font-size: 0.9rem;">Research Area: Information Retrieval</span>
+          </li>
+          <li>
+            <strong>MPhil in Statistics</strong> — University of Glasgow, 2022 - 2024
+            <br><span style="color: var(--muted); font-size: 0.9rem;">Thesis: Changepoint Detection for Net Electricity Demand Modelling in Great Britain</span>
+          </li>
+          <li>
+            <strong>MSc in Data Analytics</strong> — University of Glasgow, 2021 - 2022
+            <br><span style="color: var(--muted); font-size: 0.9rem;">Dissertation: Analysis of Course and Degree Results in a University Programme</span>
+          </li>
           <li><strong>MSc in Mathematics </strong><i>(Only coursework - no degree)</i> — Silpakorn University, 2020 - 2021</li>
-          <li><strong>BSc in Mathematics</strong> — Silpakorn University, 2016 - 2019</li>
+          <li>
+            <strong>BSc in Mathematics</strong> — Silpakorn University, 2016 - 2019
+            <br><span style="color: var(--muted); font-size: 0.9rem;">Project: Some Properties of Prime-Cubed Cyclotomic Cosets in Cyclic Group ℤ<sub style="font-family: 'Times New Roman', serif;"><i>m</i></sub></span>
+          </li>
         </ul>
-        <h3 style="margin:16px 0 6px;">Publications / Talks / Awards</h3>
+        <h3 style="margin:16px 0 6px;">Scholarships & Funding</h3>
         <ul class="list">
-          <li>Talk: Intelligent AgriDiagnose: Corn Disease Identification from an Image (Depa, 2025)</li>
+          <li>Fully funded DPST scholarship for higher-level study abroad (2020–2024)</li>
+          <li>Fully funded government scholarship for Science and Technology (DPST) (2014–2024)</li>
+          <li>Outstanding Student Scholarship, Silpakorn University (2016–2020)</li>
+        </ul>
+        <h3 style="margin:16px 0 6px;">Awards & Recognition</h3>
+        <ul class="list">
+          <li>Thailand Representative, ASEAN Digital Awards 2026 (Digital Innovation Category)</li>
+          <li>Best Undergraduate Project Presentation in Mathematics, DPST Conference (2020)</li>
+          <li>DPST Short Research Award, University of California, San Diego (2019)</li>
+        </ul>
+        <h3 style="margin:16px 0 6px;">Talks & Teaching</h3>
+        <ul class="list">
+          <li>Precalculus Tutor for First-Year Science Students, Silpakorn University (2017–2019)</li>
         </ul>
         <div style="margin-top:12px;">
-          <a href="/assets/Panthakan_Boonsuriyatham_CV.pdf" class="btn" target="_blank">Download PDF</a>
+          <a href="/assets/Panthakan_Boonsuriyatham_CV.pdf" class="btn" target="_blank">Download CV (Soon)</a>
         </div>
       </div>
     </section>
 
     <footer>
       <div>© <span id="year"></span> Panthakan Boonsuriyatham • Built with GitHub Pages</div>
-      <div style="margin-top: 8px; font-size: 0.85rem;">Last updated: November 23, 2025</div>
+      <div style="margin-top: 8px; font-size: 0.85rem;">Last updated: November 24, 2025</div>
     </footer>
   </div>
 
